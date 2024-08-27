@@ -2,14 +2,23 @@ body {
     background-color: #f8f9fa;
 }
 
-#guessInput {
-    max-width: 300px;
-    margin: 0 auto;
-}
-
-#game {
+#gameContainer {
     border: 2px solid #dee2e6;
     border-radius: 8px;
     padding: 20px;
     background-color: #ffffff;
+}
+
+button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+#wordDisplay {
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.5rem;
 }

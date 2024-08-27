@@ -9,12 +9,31 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center mt-5">Word Guessing Game</h1>
-        <div id="game" class="text-center mt-4">
-            <input type="text" id="guessInput" class="form-control" placeholder="Enter your guess">
-            <button id="guessButton" class="btn btn-primary mt-2">Guess</button>
-            <p id="result" class="mt-3"></p>
-            <button id="resetButton" class="btn btn-secondary mt-2">Reset</button>
+        <h1 class="text-center mt-5">Guessing Games</h1>
+        <div id="gameSelector" class="text-center mt-4">
+            <h2>Select a Game:</h2>
+            <button id="wordGuessGame" class="btn btn-primary mt-2">Word Guessing</button>
+            <button id="hangmanGame" class="btn btn-secondary mt-2">Hangman</button>
+        </div>
+        <div id="gameContainer" class="text-center mt-4" style="display: none;">
+            <div id="wordGuessGameDiv">
+                <h3 class="mt-3">Word Guessing Game</h3>
+                <input type="text" id="guessInput" class="form-control" placeholder="Enter your guess">
+                <button id="guessButton" class="btn btn-primary mt-2">Guess</button>
+                <p id="result" class="mt-3"></p>
+                <button id="resetButton" class="btn btn-secondary mt-2">Reset</button>
+            </div>
+            <div id="hangmanGameDiv" style="display: none;">
+                <h3 class="mt-3">Hangman Game</h3>
+                <p id="wordDisplay" class="h4"></p>
+                <input type="text" id="hangmanGuessInput" class="form-control" placeholder="Enter a letter">
+                <button id="hangmanGuessButton" class="btn btn-primary mt-2">Guess</button>
+                <button id="hangmanResetButton" class="btn btn-secondary mt-2">Reset</button>
+                <p id="hangmanResult" class="mt-3"></p>
+                <p id="hangmanHint" class="mt-3"></p>
+                <p id="hangmanAttemptsLeft" class="mt-3"></p>
+                <p id="hangmanIncorrectGuesses" class="mt-3"></p>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
