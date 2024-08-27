@@ -11,3 +11,10 @@ document.getElementById('guessButton').addEventListener('click', () => {
         document.getElementById('result').innerText = `Oh no, incorrect! Attempts: ${attempts}`;
     }
 });
+
+document.getElementById('resetButton').addEventListener('click', () => {
+    selectedWord = words[Math.floor(Math.random() * words.length)];
+    attempts = 0;
+    document.getElementById('result').innerText = '';
+    document.getElementById('guessInput').value = '';
+});
