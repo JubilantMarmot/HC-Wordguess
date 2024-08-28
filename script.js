@@ -152,3 +152,48 @@ document.getElementById('hangmanGame').addEventListener('click', () => {
     document.getElementById('hangmanGameDiv').style.display = 'block';
     setupHangmanGame();
 });
+
+let targetNumber;
+let attemptsLeft = 10;
+
+function setupNumberGuessingGame() {
+    targetNumber = Math.floor(Math.random() * 100) + 1;
+    attemptsLeft = 10;
+    document.getElementById('numberGuessButton').disabled = false;
+
+    document.getElementById('numberGuessButton').addEventListener('click', () => {
+        const guess = parseInt(document.getElementById('numberGuessInput').value, 10);
+        if (isNaN(guess) || guess < 1 || guess > 100) {
+            document.getElementById('numberGuessResult').innerText = 'Please enter a number between 1 and 100.';
+        } else if (guess === targetNumber) {
+            document.getElementById('numberGuessResult').innerText = 'Congratulations! You guessed the number!';
+            document.getElementById('numberGuessButton').disabled = true;
+        } else {
+            attemptsLeft--;
+            if (attemptsLeft === 0) {
+                document.getElementById('numberGuessResult').innerText = `Game over! The number was ${targetNumber}.`;
+                document.getElementById('numberGuessButton').disabled = true;
+            } else if (guess < targetNumber) {
+                document.getElementById('numberGuessResult').innerText = `Too low! Attempts left: ${attemptsLeft}`;
+            } else {
+                document.getElementById('numberGuessResult').innerText = `Too high! Attempts left: ${attemptsLeft}`;
+            }
+        }
+        document.getElementById('numberGuessInput').value = '';
+    });
+
+    document.getElementById('numberGuessResetButton').addEventListener('click', () => {
+        setupNumberGuessingGame();
+        document.getElementById('numberGuessResult').innerText = '';
+        document.getElementById('numberGuessInput').value = '';
+    });
+}
+
+document.getElementById('numberGuessGame').addEventListener('click', () => {
+    document.getElementById('gameSelector').style.display = 'none';
+    document.getElementById('gameContainer').style.display = 'block';
+    document.getElementById('wordGuessGameDiv').style.display = 'none';
+    document.getElementById('hangmanGameDiv').style.display = 'none';
+    document.getElementById('numberGuessGameDiv').style.display = 'block';
+    setupNumberGuessingGame();
+});
