@@ -67,7 +67,17 @@ const animalFacts = {
     'lion': 'This animal is called the king of the jungle.',
     'giraffe': 'This animal is known for its long neck and legs.',
     'penguin': 'This animal is a flightless bird that lives in the Southern Hemisphere.',
-    'dolphin': 'This animal is highly intelligent and is known for its playful behavior.'
+    'dolphin': 'This animal is highly intelligent and is known for its playful behavior.',
+    'zebra': 'This animal has black and white stripes and lives in Africa.',
+    'koala': 'This animal is native to Australia and spends most of its life in eucalyptus trees.',
+    'kangaroo': 'This animal is known for its powerful legs and tail and is native to Australia.',
+    'panda': 'This animal is a bear species known for its black and white fur and primarily eats bamboo.',
+    'tiger': 'This animal is the largest species of cat and has orange fur with black stripes.',
+    'whale': 'This animal is the largest mammal in the world and lives in the ocean.',
+    'cheetah': 'This animal is the fastest land animal and has distinctive black spots on its yellowish fur.',
+    'polar bear': 'This animal is known for its white fur and lives in the Arctic region.',
+    'rhino': 'This animal has thick skin and one or two horns on its snout and lives in Africa and Asia.',
+    'wolf': 'This animal is a social predator and is known for living in packs in various habitats.'
 };
 
 
