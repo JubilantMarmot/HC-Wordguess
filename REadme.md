@@ -4,9 +4,7 @@ This is a nice and simple guessing game that I used to get better with Javscript
 
 It comes with a simple app UI that allows you to guess words. It also includes the hangman game if you want to play it.
 
-## In the future
-
-I will add number guessing game and also a color guessing game.
+It also has an animal guessing game with many animals! Get a hint and then guess the animal's name.
 
 ## Images
 
