@@ -62,6 +62,15 @@ const hints = {
     'usability': 'How easy and intuitive software is to use.',
     'performance': 'How well software performs its tasks.'
 };
+const animalFacts = {
+    'elephant': 'This animal is known for its large ears and trunk.',
+    'lion': 'This animal is called the king of the jungle.',
+    'giraffe': 'This animal is known for its long neck and legs.',
+    'penguin': 'This animal is a flightless bird that lives in the Southern Hemisphere.',
+    'dolphin': 'This animal is highly intelligent and is known for its playful behavior.'
+};
+
+
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 let hangmanSelectedWord = hangmanWords[Math.floor(Math.random() * hangmanWords.length)];
 let attempts = 0;
@@ -196,4 +205,41 @@ document.getElementById('numberGuessGame').addEventListener('click', () => {
     document.getElementById('hangmanGameDiv').style.display = 'none';
     document.getElementById('numberGuessGameDiv').style.display = 'block';
     setupNumberGuessingGame();
+});
+
+
+let animalNames = Object.keys(animalFacts);
+let currentAnimal;
+
+function setupAnimalGuessingGame() {
+    currentAnimal = animalNames[Math.floor(Math.random() * animalNames.length)];
+    document.getElementById('animalFact').innerText = animalFacts[currentAnimal];
+    document.getElementById('animalGuessButton').disabled = false;
+
+    document.getElementById('animalGuessButton').addEventListener('click', () => {
+        const guess = document.getElementById('animalGuessInput').value.toLowerCase();
+        if (guess === currentAnimal) {
+            document.getElementById('animalGuessResult').innerText = 'Congratulations! You guessed the animal!';
+            document.getElementById('animalGuessButton').disabled = true;
+        } else {
+            document.getElementById('animalGuessResult').innerText = 'Incorrect, try again!';
+        }
+        document.getElementById('animalGuessInput').value = '';
+    });
+
+    document.getElementById('animalGuessResetButton').addEventListener('click', () => {
+        setupAnimalGuessingGame();
+        document.getElementById('animalGuessResult').innerText = '';
+        document.getElementById('animalGuessInput').value = '';
+    });
+}
+
+document.getElementById('animalGuessGame').addEventListener('click', () => {
+    document.getElementById('gameSelector').style.display = 'none';
+    document.getElementById('gameContainer').style.display = 'block';
+    document.getElementById('wordGuessGameDiv').style.display = 'none';
+    document.getElementById('hangmanGameDiv').style.display = 'none';
+    document.getElementById('numberGuessGameDiv').style.display = 'none';
+    document.getElementById('animalGuessGameDiv').style.display = 'block';
+    setupAnimalGuessingGame();
 });
